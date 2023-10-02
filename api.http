@@ -1,0 +1,44 @@
+### obtener peliculas
+GET http://localhost:8000/movies
+
+### Pelicula or ID
+GET http://localhost:8000/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+### peliculas por géneros
+GET http://localhost:8000/movies?genre=action
+
+
+### Crear una pelicula
+
+POST http://localhost:8000/movies/
+Content-Type: application/json
+
+{
+  "SQL":"SELECT * from USERS",
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+### Crear una pelicula con error
+
+POST http://localhost:8000/movies/
+Content-Type: application/json
+
+{
+  "title":"hola"
+}
+
+### Actualizar una pelicula
+PATCH http://localhost:8000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "id":143432,
+  "year":1994
+}
